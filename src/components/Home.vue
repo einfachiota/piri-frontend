@@ -11,16 +11,15 @@
         label="Name">
       </el-table-column>
       <el-table-column
-        prop="count"
-        label="Jobs"
-        sortable>
-      </el-table-column>
-      <el-table-column
-        label="Version"
-        sortable>
+        label="Version">
         <template slot-scope="scope">
           {{ scope.row.appName }} {{ scope.row.appVersion }}
         </template>
+      </el-table-column>
+      <el-table-column
+        prop="count"
+        label="Jobs"
+        sortable>
       </el-table-column>
     </el-table>
   </div>
@@ -30,7 +29,7 @@
 export default {
   name: 'Home',
   data() {
-    return {
+    return {
       url: 'https://nutzdoch.einfachiota.de/nodes',
       nodes: []
     }
@@ -49,10 +48,14 @@ export default {
           }
         });
     },
-    tableRowClassName({row, rowIndex}) {
+    tableRowClassName({row}) {
+        if (row.available && row.appName == 'POW Node') {
+          return 'success-row';
+        } 
         if (row.available && row.delay < 4) {
           return 'success-row';
-        } else {
+        } 
+        else {
           return 'danger-row';
         }
         return '';
@@ -67,10 +70,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
   .el-table .danger-row {
-    background: oldlace;
+    background: #ffb3b3;
   }
 
   .el-table .success-row {
-    background: #f0f9eb;
+    background: #b3ffb3;
   }
 </style>
