@@ -4,13 +4,13 @@
     :data="nodes"
     style="width: 100%"
     :row-class-name="tableRowClassName"
-    :default-sort="{prop: 'count', order: 'descending'}"
+    :default-sort="{prop: 'score', order: 'descending'}"
   >
     <el-table-column prop="name" label="Name"></el-table-column>
     <el-table-column label="Version">
       <template slot-scope="scope">{{ scope.row.appName }} {{ scope.row.appVersion }}</template>
     </el-table-column>
-    <el-table-column prop="count" label="Jobs" sortable></el-table-column>
+    <el-table-column prop="score" label="Score" sortable></el-table-column>
   </el-table>
 </template>
 
@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       loading: false,
-      url: "https://nutzdoch.einfachiota.de/nodes",
+      url: "https://score.api.einfachiota.de",
       nodes: []
     };
   },
