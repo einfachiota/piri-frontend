@@ -1,5 +1,8 @@
 <template>
-  <el-tag type="success">Online</el-tag>
+  <div>
+    <el-tag v-if="online" type="success">Online</el-tag>
+    <el-tag v-if="!online" type="danger">Offline</el-tag>
+  </div>
 </template>
 
 <script>
@@ -8,6 +11,7 @@ export default {
   data() {
     return {
       loading: false,
+      online: false,
       url: "https://nutzdoch.einfachiota.de/actuator/health"
     };
   },
@@ -20,7 +24,9 @@ export default {
         })
         .then(function(status) {
           if (status) {
-            console.log("status", status);
+            self.online = true
+          } else {
+            self.online = false
           }
         });
     }
