@@ -5,6 +5,7 @@
     style="width: 100%"
     :row-class-name="tableRowClassName"
     :default-sort="{prop: 'score', order: 'descending'}"
+    @row-click="rowClicked"
   >
     <el-table-column prop="name" label="Name"></el-table-column>
     <el-table-column label="Version">
@@ -47,6 +48,11 @@ export default {
       } else {
         return "danger-row";
       }
+    },
+    rowClicked(row) {
+      console.log("row", row)
+      this.$router.push({ name: 'details', params: { nodeId: row.name } })
+
     }
   },
   created() {
@@ -63,6 +69,10 @@ export default {
 </script>
 
 <style>
+
+.el-table .el-table__row {
+  cursor: pointer;
+}
 
 .el-table .danger-row {
   background: #ffb3b3;

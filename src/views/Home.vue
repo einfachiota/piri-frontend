@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import StatusBar from './StatusBar'
-import NodeList from './NodeList'
+import StatusBar from '../components/StatusBar'
+import NodeList from '../components/NodeList'
 
 export default {
   name: "Home",
