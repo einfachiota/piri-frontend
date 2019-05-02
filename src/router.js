@@ -13,7 +13,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/nodes/:nodeId',
+      path: '/nodes/:nodeName',
       name: 'details',
       component: Details,
       props: true,

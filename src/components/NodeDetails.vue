@@ -1,29 +1,26 @@
 <template>
-  <div>{{node}}</div>
+  <div>{{nodeName}}</div>
 </template>
 
 <script>
 export default {
   name: "NodeDetails",
-  props: ["node"],
+  props: ["nodeName"],
   data() {
     return {
       loading: false,
-      url: "https://score.api.einfachiota.de"
+      url: "https://pool.einfachiota.de/nodes/"
     };
   },
   methods: {
     fetchData() {
       let self = this;
-      fetch(this.url)
+      fetch(this.url + this.nodeName)
         .then(function(response) {
           return response.json();
         })
-        .then(function(nodes) {
-          if (nodes) {
-            self.nodes = nodes;
-            self.loading = false;
-          }
+        .then(function(response) {
+          console.log("what", response)
         });
     }
   },

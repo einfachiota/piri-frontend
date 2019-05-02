@@ -51,7 +51,8 @@ export default {
     },
     rowClicked(row) {
       console.log("row", row)
-      this.$router.push({ name: 'details', params: { nodeId: row.name } })
+      this.$router.push({ name: 'details', params: { nodeName: row.name } })
+        console.log("row2")
 
     }
   },
