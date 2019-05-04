@@ -16,7 +16,7 @@ export default {
   components: { StatusBar, NodeList },
   data() {
     return {
-      url: "https://nutzdoch.einfachiota.de/",
+      url: "https://nutzdoch.einfachiota.de",
     }
   }
 };
