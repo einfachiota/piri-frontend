@@ -3,9 +3,8 @@
     <div class="row">
       <div class="footer-main">
         <h4>einfachIOTA</h4>
-        <a href="www.einfachIOTA.de/news" class="footer-main-link">News</a>
-        <a href="pool.einfachIOTA.de/news" class="footer-main-link">Pool</a>
-        <a href="www.einfachIOTA.de/news" class="footer-main-link">Team</a>
+        <a href="www.einfachIOTA.de" class="footer-main-link">Webseite</a>
+        <a href="www.einfachIOTA.de/team" class="footer-main-link">Team</a>
       </div>
       <div class="footer-main">
         <h4>Mehr</h4>
