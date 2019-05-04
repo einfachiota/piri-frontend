@@ -3,8 +3,8 @@
     <div class="row">
       <div class="footer-main">
         <h4>einfachIOTA</h4>
-        <a href="www.einfachIOTA.de" class="footer-main-link">Webseite</a>
-        <a href="www.einfachIOTA.de/team" class="footer-main-link">Team</a>
+        <a href="https://www.einfachIOTA.de" class="footer-main-link">Webseite</a>
+        <a href="https://www.einfachIOTA.de/team" class="footer-main-link">Team</a>
       </div>
       <div class="footer-main">
         <h4>Mehr</h4>
@@ -20,7 +20,7 @@
       <div class="footer-main">
         <h4>IOTA</h4>
         <a href="https://www.iota.org" target="_blank" class="footer-main-link">Website</a>
-        <a href="https://ecosystem.iota.org" target="_blank" class="footer-main-link">Öksystem</a>
+        <a href="https://ecosystem.iota.org" target="_blank" class="footer-main-link">Ecosystem</a>
         <a href="https://blog.iota.org" target="_blank" class="footer-main-link">Blog</a>
       </div>
     </div>
