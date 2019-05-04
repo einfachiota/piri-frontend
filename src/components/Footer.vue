@@ -43,7 +43,6 @@
   width: 100%;
   padding: 40px 150px;
   box-sizing: border-box;
-  height: 340px;
   text-align: center;
   .container {
     box-sizing: border-box;
