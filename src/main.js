@@ -6,9 +6,13 @@ import 'element-ui/lib/theme-chalk/index.css';
 import router from './router'
 import './registerServiceWorker'
 
+import VueClipboard from 'vue-clipboard2'
+
+
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);
+Vue.use(VueClipboard)
 
 new Vue({
   router,
