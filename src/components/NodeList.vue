@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       loading: false,
-      url: "https://score.api.einfachiota.de",
+      url: "https://nutzdoch.einfachiota.de/nodes",
       nodes: []
     };
   },

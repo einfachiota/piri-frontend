@@ -12,7 +12,7 @@ export default {
     return {
       loading: false,
       online: false,
-      url: "https://nutzdoch.einfachiota.de/actuator/health"
+      url: "https://nutzdoch.einfachiota.de/actuator/health/"
     };
   },
   methods: {
