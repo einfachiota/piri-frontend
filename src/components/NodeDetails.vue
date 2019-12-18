@@ -1,5 +1,8 @@
 <template>
-  <div>{{nodeName}}</div>
+  <div>
+    <h1>{{nodeName}}</h1>
+    <pre>{{details}}</pre>
+  </div>
 </template>
 
 <script>
@@ -9,7 +12,8 @@ export default {
   data() {
     return {
       loading: false,
-      url: "https://pool.einfachiota.de/nodes/"
+      url: "https://nutzdoch.einfachiota.de/nodes/",
+      details: {}
     };
   },
   methods: {
@@ -21,6 +25,7 @@ export default {
         })
         .then(function(response) {
           console.log("what", response)
+          self.details = response;
         });
     }
   },
