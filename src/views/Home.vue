@@ -18,6 +18,7 @@
           class="el-zoom-in-top"
         ></el-alert>
         <h3 v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">{{url}}</h3>
+        <br>
         <button
           type="button"
           class="el-button el-button--primary"
@@ -27,13 +28,7 @@
         >URL Kopieren</button>
       </div>
     </div>
-    <div class="section">
-      <div class="container">
-        <h2>Pool Status</h2>
-        <StatusBar/>
-      </div>
-    </div>
-<div class="section section-background">
+<div class="section">
       <div class="container">
         <h2>Was ist ein Pool?</h2>
         <p>Du möchtest mehr zum Pool und seine Funktionsweise erfahren? Klicke hier, um mehr darüber zu lesen.</p>
