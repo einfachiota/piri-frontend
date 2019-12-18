@@ -18,3 +18,14 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.detail {
+  margin-top: 50px;
+}
+</style>
