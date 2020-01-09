@@ -4,17 +4,18 @@
     :data="nodes"
     style="width: 100%"
     :default-sort="{prop: 'score', order: 'ascending'}"
+    
     @row-click="rowClicked"
   >
-    <el-table-column prop="" label="Rang">
+    <el-table-column prop="" label="Rang" align="center">
           <template slot-scope="scope">{{ scope.$index + 1 }}</template>
     </el-table-column>
-    <el-table-column prop="name" label="Name"></el-table-column>
-    <el-table-column label="Version">
+    <el-table-column prop="name" label="Name" align="center"></el-table-column>
+    <el-table-column label="Version" align="center">
       <template slot-scope="scope">{{ scope.row.appName }} {{ scope.row.appVersion }}</template>
     </el-table-column>
-    <el-table-column prop="points" label="Score"></el-table-column>
-    <el-table-column prop="available" label="Status">
+    <el-table-column prop="points" label="Score" align="center"></el-table-column>
+    <el-table-column prop="available" label="Status" align="center">
       <template slot-scope="scope"><el-tag :type="`${scope.row.available ? 'success' : 'danger'}`">{{scope.row.available ? "online" : "offline"}}</el-tag></template>
     </el-table-column>
   </el-table>
@@ -77,7 +78,9 @@ export default {
 </script>
 
 <style>
-
+.el-table {
+  text-align: center;
+}
 .el-table .el-table__row {
   cursor: pointer;
 }
