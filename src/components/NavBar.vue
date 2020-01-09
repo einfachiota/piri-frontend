@@ -86,7 +86,7 @@ export default {
       opacity: 1;
       img.logo {
         width: auto;
-        height: 35px;
+        height: 65px;
         transition: all 200ms ease-in-out;
       }
     }

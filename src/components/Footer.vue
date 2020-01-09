@@ -71,7 +71,7 @@
       margin-right: 0;
     }
     .logo {
-      height: 40px;
+      height: 100px;
     }
     h4 {
       font-size: 20px;
