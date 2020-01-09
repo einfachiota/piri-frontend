@@ -4,14 +4,17 @@
     :data="nodes"
     style="width: 100%"
     :row-class-name="tableRowClassName"
-    :default-sort="{prop: 'score', order: 'descending'}"
+    :default-sort="{prop: 'score', order: 'ascending'}"
     @row-click="rowClicked"
   >
+    <el-table-column prop="" label="Rang">
+          <template slot-scope="scope">{{ scope.$index + 1 }}</template>
+    </el-table-column>
     <el-table-column prop="name" label="Name"></el-table-column>
     <el-table-column label="Version">
       <template slot-scope="scope">{{ scope.row.appName }} {{ scope.row.appVersion }}</template>
     </el-table-column>
-    <el-table-column prop="score" label="Score" sortable></el-table-column>
+    <el-table-column prop="points" label="Score"></el-table-column>
   </el-table>
 </template>
 
@@ -21,7 +24,7 @@ export default {
   data() {
     return {
       loading: false,
-      url: "https://nutzdoch.einfachiota.de/nodes",
+      url: "https://scoreapi.tanglebay.org/nodes",
       nodes: []
     };
   },
@@ -33,6 +36,7 @@ export default {
           return response.json();
         })
         .then(function(nodes) {
+          console.log("nodes", nodes)
           if (nodes) {
             self.nodes = nodes;
             self.loading = false;
@@ -40,10 +44,7 @@ export default {
         });
     },
     tableRowClassName({ row }) {
-      if (
-        (row.available && row.appName == "POW Node") ||
-        (row.available && row.delay < 4)
-      ) {
+      if (row.available) {
         return "success-row";
       } else {
         return "danger-row";
@@ -63,7 +64,7 @@ export default {
       function() {
         this.fetchData();
       }.bind(this),
-      5000
+      10000
     );
   }
 };
