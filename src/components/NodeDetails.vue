@@ -12,8 +12,9 @@ export default {
   data() {
     return {
       loading: false,
-      url: "https://nutzdoch.einfachiota.de/nodes/",
-      details: {}
+      url: "https://scoreapi.tanglebay.org/nodes",
+      details: {},
+      intervalid1: null
     };
   },
   methods: {
@@ -29,7 +30,9 @@ export default {
         });
     }
   },
-  created() {
+  mounted() {
+    console.log("details")
+
     this.loading = true;
     this.fetchData();
     this.intervalid1 = setInterval(
@@ -38,6 +41,9 @@ export default {
       }.bind(this),
       5000
     );
+  },
+  beforeDestroy () {
+    clearInterval(this.intervalid1)
   }
 };
 </script>

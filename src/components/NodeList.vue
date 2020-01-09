@@ -3,7 +3,6 @@
     v-loading="loading"
     :data="nodes"
     style="width: 100%"
-    :row-class-name="tableRowClassName"
     :default-sort="{prop: 'score', order: 'ascending'}"
     @row-click="rowClicked"
   >
@@ -15,6 +14,9 @@
       <template slot-scope="scope">{{ scope.row.appName }} {{ scope.row.appVersion }}</template>
     </el-table-column>
     <el-table-column prop="points" label="Score"></el-table-column>
+    <el-table-column prop="available" label="Status">
+      <template slot-scope="scope"><el-tag :type="`${scope.row.available ? 'success' : 'danger'}`">{{scope.row.available ? "online" : "offline"}}</el-tag></template>
+    </el-table-column>
   </el-table>
 </template>
 
@@ -25,7 +27,8 @@ export default {
     return {
       loading: false,
       url: "https://scoreapi.tanglebay.org/nodes",
-      nodes: []
+      nodes: [],
+      intervalid1: null
     };
   },
   methods: {
@@ -52,12 +55,12 @@ export default {
     },
     rowClicked(row) {
       console.log("row", row)
-      this.$router.push({ name: 'details', params: { nodeName: row.name } })
+      this.$router.push({ name: 'details', params: { nodeName: row.name, details: row } })
         console.log("row2")
 
     }
   },
-  created() {
+  mounted() {
     this.loading = true;
     this.fetchData();
     this.intervalid1 = setInterval(
@@ -66,6 +69,9 @@ export default {
       }.bind(this),
       10000
     );
+  },
+  beforeDestroy () {
+    clearInterval(this.intervalid1)
   }
 };
 </script>
